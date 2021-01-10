@@ -1,25 +1,38 @@
 
 {{!-- <li class="listCountry">{{name}}</li> --}}
-
-{{!-- <div class="photo-card">
-  <img src="" alt="" />
+{{#each this}}
+<div class="photo-card">
+  <img src="{{webformatURL}}" alt="" />
 
   <div class="stats">
     <p class="stats-item">
       <i class="material-icons">thumb_up</i>
-      1108
+      {{likes}}
     </p>
     <p class="stats-item">
       <i class="material-icons">visibility</i>
-      320321
+      {{views}}
     </p>
     <p class="stats-item">
       <i class="material-icons">comment</i>
-      129
+      {{comments}}
     </p>
     <p class="stats-item">
       <i class="material-icons">cloud_download</i>
-      176019
+      {{downloads}}
     </p>
   </div>
+</div>
+{{/each}}
+{{!-- <h1 class="country">{{name}}</h1>
+<div class="form_country">
+    <ul>
+        <p class="capital"><span class="text">Capital:</span>{{capital}}</p>
+        <p class="population"><span class="text">Population:</span>{{population}}</p>
+        <ul class="languages"><span class="text">Languages:</span>{{#each languages}}
+            <li class="tag-list__item">{{name}}</li>
+            {{/each}}
+        </ul>
+    </ul>
+    <ul><img src="{{flag}}" alt="" class="flag" /></ul>
 </div> --}}

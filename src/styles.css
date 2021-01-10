@@ -39,3 +39,25 @@ html {
   text-align: left;
   margin: 0 auto;
 }
+
+.isHidden {
+  display: none;
+}
+.gallery {
+  display: flex;
+  flex-flow: row wrap;
+}
+.gallery li {
+  margin: 20px;
+}
+
+.photo-card {
+  margin-right: 20px;
+}
+.stats {
+  display: flex;
+}
+
+.stats-item {
+  margin-right: 15px;
+}
