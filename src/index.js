@@ -11,7 +11,11 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const inputValue = e.target.elements.query.value;
-  fetchObj.getfetch(inputValue, container);
+
+  fetchObj.query = inputValue;
+  fetchObj.reset();
+
+  fetchObj.getfetch(container);
 
   container.innerHTML = "";
 
@@ -24,5 +28,5 @@ loadMore.addEventListener("click", () => {
   fetchObj.setPage();
   console.log("все ок ");
 
-  fetchObj.getfetch(undefined, container);
+  fetchObj.getfetch(container);
 });

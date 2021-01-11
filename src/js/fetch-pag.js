@@ -16,21 +16,24 @@ export default {
     return (this.query = val);
   },
 
-  getfetch(val = this.query, place) {
+  getfetch(place) {
     const search = `${this.baseUrl}?image_type=photo&orientation=horizontal&q=${this.query}&page=${this.page}&per_page=${this.perPage}&key=${this.key}`;
-    this.queryValue = val;
+
     return fetch(search)
       .then((response) => {
         console.log(response);
         return response.json();
       })
-      .then((data) => {
-        console.log(data);
-        return data.hits;
-      })
-      .then((result) => {
-        console.log(result);
-        const items = tem(result);
+
+      .then(({ hits }) => {
+        if (hits.length < 12) {
+          refs.loadMore.classList.add("isHidden");
+        }
+        if (this.query === "") {
+          refs.loadMore.classList.add("isHidden");
+        }
+        console.log(hits);
+        const items = tem(hits);
         place.insertAdjacentHTML("beforeend", items);
 
         window.scrollTo({
@@ -44,5 +47,8 @@ export default {
   setPage() {
     this.page += 1;
     return this.page;
+  },
+  reset() {
+    return (this.page = 1);
   },
 };
