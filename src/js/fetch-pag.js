@@ -26,12 +26,10 @@ export default {
       })
 
       .then(({ hits }) => {
-        if (hits.length < 12) {
+        if (hits.length < 12 || this.query === "") {
           refs.loadMore.classList.add("isHidden");
         }
-        if (this.query === "") {
-          refs.loadMore.classList.add("isHidden");
-        }
+
         console.log(hits);
         const items = tem(hits);
         place.insertAdjacentHTML("beforeend", items);
