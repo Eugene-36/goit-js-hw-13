@@ -1495,3 +1495,18 @@
 //   //return parseFloat(quantity);
 // }
 // console.log(elapsedSeconds(1000, 5000));
+
+// Напиши функцию map(fn, array),
+//     которая принимает на вход функцию и массив,
+//         и обрабатывает каждый элемент массива этой функцией, возвращая новый массив.
+
+const flip = (d, a) => {
+  //TODO
+  // console.log(a.reverse());
+  let res = d === "R" ? a.sort((a, b) => a - b) : a.sort((a, b) => b - a);
+
+  console.log(res);
+};
+
+console.log(flip("R", [3, 2, 1, 2])); //, [1, 2, 2, 3]
+console.log(flip("L", [1, 4, 5, 3, 5])); //, [5, 5, 4, 3, 1]
