@@ -1495,10 +1495,26 @@
 //   //return parseFloat(quantity);
 // }
 // console.log(elapsedSeconds(1000, 5000));
-function removeExclamationMarks(s) {
-  console.log(s.replace(/!/g, ""));
-  return "";
-}
-console.log(removeExclamationMarks("Hello World!")); //, ", "Hello World""
+// function removeExclamationMarks(s) {
+//   console.log(s.replace(/!/g, ""));
+//   return "";
+// }
+// console.log(removeExclamationMarks("Hello World!")); //, ", "Hello World""
 
-// Write function bmi that calculates body mass index (bmi = weight / height2).
+// // Write function bmi that calculates body mass index (bmi = weight / height2).
+
+//=================================================================================
+//[humanYears,catYears,dogYears]
+function firstNonConsecutive(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    // const element = arr[figure - 1];
+    // const last = arr[figure.length - 1];
+    // console.log("первый", last);
+    // console.log("последний", element);
+    if (arr[i - 1].length > arr[i].length) {
+      alert(arr[i - 1] + " has a greater length than " + arr[i]);
+    }
+  }
+}
+
+console.log(firstNonConsecutive([1, 2, 3, 4, 6, 7, 8])); //6
